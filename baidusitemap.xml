@@ -4,8 +4,90 @@
 
     
   <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/http/</loc>
+    <lastmod>2018-09-16T14:43:01.519Z</lastmod>
+    <data>
+        <display>
+        <title>Http报头Accept与Content-Type的区别</title>
+        <pubTime>2018-09-16T12:18:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://luciferarmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/WSGI_webserver_webframwork/</loc>
+    <lastmod>2018-09-16T14:42:28.461Z</lastmod>
+    <data>
+        <display>
+        <title>WSGI,web服务器,web框架之间的关系</title>
+        <pubTime>2018-09-16T14:24:00.000Z</pubTime>
+        
+        <tag>wsgi</tag>
+         
+        <tag>Web服务</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://luciferarmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/Nginx_static_atuo/</loc>
+    <lastmod>2018-09-16T13:37:24.286Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx静态资源和动态资源的分离</title>
+        <pubTime>2018-09-16T13:18:00.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://luciferarmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/async_note/</loc>
+    <lastmod>2018-09-16T12:24:21.100Z</lastmod>
+    <data>
+        <display>
+        <title>同步异步与阻塞非阻塞的区别</title>
+        <pubTime>2018-09-16T11:32:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://luciferarmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://luciferarmy.github.io/2018/09/07/hexo_blog/</loc>
-    <lastmod>2018-09-10T15:07:36.090Z</lastmod>
+    <lastmod>2018-09-10T15:14:42.994Z</lastmod>
     <data>
         <display>
         <title>Hexo+GitHub 搭建个人博客</title>

@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/http/</loc>
+    
+    <lastmod>2018-09-16T14:43:01.519Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/WSGI_webserver_webframwork/</loc>
+    
+    <lastmod>2018-09-16T14:42:28.461Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/Nginx_static_atuo/</loc>
+    
+    <lastmod>2018-09-16T13:37:24.286Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://luciferarmy.github.io/2018/09/16/async_note/</loc>
+    
+    <lastmod>2018-09-16T12:24:21.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luciferarmy.github.io/2018/09/07/hexo_blog/</loc>
     
-    <lastmod>2018-09-10T15:07:36.090Z</lastmod>
+    <lastmod>2018-09-10T15:14:42.994Z</lastmod>
     
   </url>
   
@@ -212,14 +240,14 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo2.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo2.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
@@ -240,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/border1px.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
     
     <lastmod>2018-08-22T17:03:38.620Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/coffee_pc_demo/pro-con.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/border1px.html</loc>
     
     <lastmod>2018-08-22T17:03:38.620Z</lastmod>
     
