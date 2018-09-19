@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://luciferarmy.github.io/2018/09/20/Django_mysql_datetime/</loc>
+    <lastmod>2018-09-19T16:18:47.677Z</lastmod>
+    <data>
+        <display>
+        <title>Django时间数据与保存到MySQL的时间相差8小时问题</title>
+        <pubTime>2018-09-20T15:32:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="笔记" url="http://luciferarmy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://luciferarmy.github.io/2018/09/16/http/</loc>
     <lastmod>2018-09-16T14:43:01.519Z</lastmod>
     <data>

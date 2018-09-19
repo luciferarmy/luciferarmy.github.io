@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luciferarmy.github.io/2018/09/20/Django_mysql_datetime/</loc>
+    
+    <lastmod>2018-09-19T16:18:47.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luciferarmy.github.io/2018/09/16/http/</loc>
     
     <lastmod>2018-09-16T14:43:01.519Z</lastmod>
@@ -240,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/hack_demo.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
@@ -254,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/hack_demo.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
