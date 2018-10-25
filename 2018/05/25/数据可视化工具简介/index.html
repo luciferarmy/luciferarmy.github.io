@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,Data Analysis," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lucifer's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;大数据时代,拥有数据就拥有一切,python作为强大的数据分析利器,在数据分析领域独领风骚,下面介绍一个很好的数据可视化工具. ECharts&amp;#160; &amp;#160; &amp;#160; &amp;#160;Echarts是一个使用 JavaScript实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11">
+<meta name="keywords" content="Python,Data Analysis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据可视化工具">
+<meta property="og:url" content="http://luciferarmy.github.io/2018/05/25/数据可视化工具简介/index.html">
+<meta property="og:site_name" content="Lucifer&#39;s Blog">
+<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;大数据时代,拥有数据就拥有一切,python作为强大的数据分析利器,在数据分析领域独领风骚,下面介绍一个很好的数据可视化工具. ECharts&amp;#160; &amp;#160; &amp;#160; &amp;#160;Echarts是一个使用 JavaScript实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/pyecharts_img/3D%20柱状图.png">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/pyecharts_img/Map%20结合%20VisualMap%20示例.png">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/pyecharts_img/全国主要城市空气质量.png">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/pyecharts_img/全国主要城市空气质量1.png">
+<meta property="og:updated_time" content="2018-10-25T06:42:01.537Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据可视化工具">
+<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;大数据时代,拥有数据就拥有一切,python作为强大的数据分析利器,在数据分析领域独领风骚,下面介绍一个很好的数据可视化工具. ECharts&amp;#160; &amp;#160; &amp;#160; &amp;#160;Echarts是一个使用 JavaScript实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11">
+<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/pyecharts_img/3D%20柱状图.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://luciferarmy.github.io/2018/05/25/数据可视化工具简介/"/>
+
+
+
+
+
+  <title>数据可视化工具 | Lucifer's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <meta charset="UTF-8">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/luciferarmy" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lucifer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">人生苦短,我用Python</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-link">
+          <a href="/link" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/2018/05/25/数据可视化工具简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lucifer">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/Lucifer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lucifer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据可视化工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T23:10:00+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Data-Aanalysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Aanalysis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,292
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#160; &#160; &#160; &#160;大数据时代,拥有数据就拥有一切,python作为强大的数据分析利器,在数据分析领域独领风骚,下面介绍一个很好的数据可视化工具.</p>
+<h2 id="ECharts"><a href="#ECharts" class="headerlink" title="ECharts"></a>ECharts</h2><p>&#160; &#160; &#160; &#160;Echarts是一个使用 JavaScript实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，<br>Firefox，Safari等），提供直观，交互丰富，可高度个性化定制的数据可视化图表。提供了常规的折线图、柱状图、散点图、饼图、K线图，<br>用于统计的盒形图，用于地理数据可视化的地图、热力图、线图，用于关系数据可视化的关系图、treemap。</p>
+<a id="more"></a>
+<p>特点:</p>
+<ul>
+<li>1.基于HTML5的图形库,图形的创建也比较简单，直接引用JS即可</li>
+<li>2.百度的项目，而且一直有更新，目前最新的是EChart 4.1.0；</li>
+<li>3.项目文档比较详细，而且是中文的，理解比较容易；</li>
+<li>4.支持的图形很丰富，并且可以直接切换图形，使用起来非常方便</li>
+</ul>
+<p>使用:<br>&#160; &#160; &#160; &#160;官网下载echarts.js引入即可使用.</p>
+<p>ECharts首页:<br>&#160; &#160; &#160; &#160;<a href="http://echarts.baidu.com" target="_blank" rel="noopener">http://echarts.baidu.com</a></p>
+<h2 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h2><p>&#160; &#160; &#160; &#160;pyecharts 是一个用于生成 Echarts 图表的Python类库,可以实现在 Python 中直接使用数据生成图表</p>
+<p>特点:</p>
+<ul>
+<li>1.操作简单使用方便</li>
+<li>2.语言翻译扩展pyecharts-javascripthon可以实现将python3.5+代码转换为JS代码</li>
+<li>3.支持在Jupyter Notebook,Flask,Django平台中使用 (目前最新版本0.5.8)</li>
+</ul>
+<p>使用:<br>&#160; &#160; &#160; &#160;pip install pyecharts</p>
+<p>pyecharts主页:<br>&#160; &#160; &#160; &#160;<a href="http://pyecharts.org" target="_blank" rel="noopener">http://pyecharts.org</a></p>
+<h3 id="可以展示的图表类型"><a href="#可以展示的图表类型" class="headerlink" title="可以展示的图表类型:"></a>可以展示的图表类型:</h3><pre><code>Bar（柱状图/条形图）
+Bar3D（3D 柱状图）
+Boxplot（箱形图）
+EffectScatter（带有涟漪特效动画的散点图）
+Funnel（漏斗图）
+Gauge（仪表盘）
+Geo（地理坐标系）
+GeoLines（地理坐标系线图）
+Graph（关系图）
+HeatMap（热力图）
+Kline/Candlestick（K线图）
+Line（折线/面积图）
+Line3D（3D 折线图）
+Liquid（水球图）
+Map（地图）
+Parallel（平行坐标系）
+Pie（饼图）
+Polar（极坐标系）
+Radar（雷达图）
+Sankey（桑基图）
+Scatter（散点图）
+Scatter3D（3D 散点图）
+ThemeRiver（主题河流图）
+Tree（树图）
+TreeMap（矩形树图）
+WordCloud（词云图）
+</code></pre><h3 id="1-折线图"><a href="#1-折线图" class="headerlink" title="1. 折线图"></a>1. 折线图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> online</span><br><span class="line"></span><br><span class="line">online()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Line</span><br><span class="line"></span><br><span class="line">attr = [<span class="string">'周一'</span>, <span class="string">'周二'</span>, <span class="string">'周三'</span>, <span class="string">'周四'</span>, <span class="string">'周五'</span>, <span class="string">'周六'</span>, <span class="string">'周日'</span>]</span><br><span class="line">line = Line(<span class="string">"折线图示例"</span>)</span><br><span class="line">line.add(</span><br><span class="line">    <span class="string">"最高气温"</span>,</span><br><span class="line">    attr,</span><br><span class="line">    [<span class="number">11</span>, <span class="number">11</span>, <span class="number">15</span>, <span class="number">13</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>],</span><br><span class="line">    mark_point=[<span class="string">"max"</span>, <span class="string">"min"</span>],</span><br><span class="line">    mark_line=[<span class="string">"average"</span>],</span><br><span class="line">)</span><br><span class="line">line.add(</span><br><span class="line">    <span class="string">"最低气温"</span>,</span><br><span class="line">    attr,</span><br><span class="line">    [<span class="number">1</span>, <span class="number">-2</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>],</span><br><span class="line">    mark_point=[<span class="string">"max"</span>, <span class="string">"min"</span>],</span><br><span class="line">    mark_line=[<span class="string">"average"</span>],</span><br><span class="line">    yaxis_formatter=<span class="string">"°C"</span>,</span><br><span class="line">)</span><br><span class="line">line</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/line.html" target="_blank">折线图</a></p>
+<h3 id="2-柱状图"><a href="#2-柱状图" class="headerlink" title="2. 柱状图"></a>2. 柱状图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Bar</span><br><span class="line"></span><br><span class="line">attr = [<span class="string">"衬衫"</span>, <span class="string">"羊毛衫"</span>, <span class="string">"雪纺衫"</span>, <span class="string">"裤子"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>]</span><br><span class="line">v1 = [<span class="number">5</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">10</span>, <span class="number">75</span>, <span class="number">90</span>]</span><br><span class="line">v2 = [<span class="number">10</span>, <span class="number">25</span>, <span class="number">8</span>, <span class="number">60</span>, <span class="number">20</span>, <span class="number">80</span>]</span><br><span class="line">bar = Bar(<span class="string">"柱状图数据堆叠"</span>)</span><br><span class="line">bar.add(<span class="string">"商家A"</span>, attr, v1, is_stack=<span class="keyword">True</span>)</span><br><span class="line">bar.add(<span class="string">"商家B"</span>, attr, v2, is_stack=<span class="keyword">True</span>)</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/bar.html" target="_blank">柱状图数据堆叠</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Bar</span><br><span class="line"></span><br><span class="line">bar = Bar(<span class="string">"x 轴和 y 轴交换"</span>)</span><br><span class="line">bar.add(<span class="string">"商家A"</span>, attr, v1)</span><br><span class="line">bar.add(<span class="string">"商家B"</span>, attr, v2, is_convert=<span class="keyword">True</span>)</span><br><span class="line">bar</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/bar2.html" target="_blank">x 轴和 y 轴交换柱状图</a></p>
+<h3 id="3-Bar3D-3D柱状图"><a href="#3-Bar3D-3D柱状图" class="headerlink" title="3. Bar3D (3D柱状图)"></a>3. Bar3D (3D柱状图)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Bar3D</span><br><span class="line"></span><br><span class="line">bar3d = Bar3D(<span class="string">"3D 柱状图"</span>, width=<span class="number">900</span>, height=<span class="number">600</span>)</span><br><span class="line">x_axis = [</span><br><span class="line">    <span class="string">"12a"</span>, <span class="string">"1a"</span>, <span class="string">"2a"</span>, <span class="string">"3a"</span>, <span class="string">"4a"</span>, <span class="string">"5a"</span>, <span class="string">"6a"</span>, <span class="string">"7a"</span>, <span class="string">"8a"</span>, <span class="string">"9a"</span>, <span class="string">"10a"</span>, <span class="string">"11a"</span>,</span><br><span class="line">    <span class="string">"12p"</span>, <span class="string">"1p"</span>, <span class="string">"2p"</span>, <span class="string">"3p"</span>, <span class="string">"4p"</span>, <span class="string">"5p"</span>, <span class="string">"6p"</span>, <span class="string">"7p"</span>, <span class="string">"8p"</span>, <span class="string">"9p"</span>, <span class="string">"10p"</span>, <span class="string">"11p"</span></span><br><span class="line">    ]</span><br><span class="line">y_axis = [</span><br><span class="line">    <span class="string">"Saturday"</span>, <span class="string">"Friday"</span>, <span class="string">"Thursday"</span>, <span class="string">"Wednesday"</span>, <span class="string">"Tuesday"</span>, <span class="string">"Monday"</span>, <span class="string">"Sunday"</span></span><br><span class="line">    ]</span><br><span class="line">data = [</span><br><span class="line">    [<span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">8</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">11</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">12</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">13</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">14</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">15</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">16</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">17</span>, <span class="number">6</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">18</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">19</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">20</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">21</span>, <span class="number">3</span>], [<span class="number">0</span>, <span class="number">22</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">23</span>, <span class="number">5</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">0</span>, <span class="number">7</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">10</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">11</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">12</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">13</span>, <span class="number">6</span>], [<span class="number">1</span>, <span class="number">14</span>, <span class="number">9</span>], [<span class="number">1</span>, <span class="number">15</span>, <span class="number">11</span>], [<span class="number">1</span>, <span class="number">16</span>, <span class="number">6</span>], [<span class="number">1</span>, <span class="number">17</span>, <span class="number">7</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">18</span>, <span class="number">8</span>], [<span class="number">1</span>, <span class="number">19</span>, <span class="number">12</span>], [<span class="number">1</span>, <span class="number">20</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">21</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">22</span>, <span class="number">7</span>], [<span class="number">1</span>, <span class="number">23</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">8</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">2</span>, <span class="number">10</span>, <span class="number">3</span>], [<span class="number">2</span>, <span class="number">11</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">12</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">13</span>, <span class="number">9</span>], [<span class="number">2</span>, <span class="number">14</span>, <span class="number">8</span>], [<span class="number">2</span>, <span class="number">15</span>, <span class="number">10</span>], [<span class="number">2</span>, <span class="number">16</span>, <span class="number">6</span>], [<span class="number">2</span>, <span class="number">17</span>, <span class="number">5</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">18</span>, <span class="number">5</span>], [<span class="number">2</span>, <span class="number">19</span>, <span class="number">5</span>], [<span class="number">2</span>, <span class="number">20</span>, <span class="number">7</span>], [<span class="number">2</span>, <span class="number">21</span>, <span class="number">4</span>], [<span class="number">2</span>, <span class="number">22</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">23</span>, <span class="number">4</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">0</span>, <span class="number">7</span>], [<span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">3</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>], [<span class="number">3</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">3</span>, <span class="number">10</span>, <span class="number">5</span>], [<span class="number">3</span>, <span class="number">11</span>, <span class="number">4</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">12</span>, <span class="number">7</span>], [<span class="number">3</span>, <span class="number">13</span>, <span class="number">14</span>], [<span class="number">3</span>, <span class="number">14</span>, <span class="number">13</span>], [<span class="number">3</span>, <span class="number">15</span>, <span class="number">12</span>], [<span class="number">3</span>, <span class="number">16</span>, <span class="number">9</span>], [<span class="number">3</span>, <span class="number">17</span>, <span class="number">5</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">18</span>, <span class="number">5</span>], [<span class="number">3</span>, <span class="number">19</span>, <span class="number">10</span>], [<span class="number">3</span>, <span class="number">20</span>, <span class="number">6</span>], [<span class="number">3</span>, <span class="number">21</span>, <span class="number">4</span>], [<span class="number">3</span>, <span class="number">22</span>, <span class="number">4</span>], [<span class="number">3</span>, <span class="number">23</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">4</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">4</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">8</span>, <span class="number">0</span>], [<span class="number">4</span>, <span class="number">9</span>, <span class="number">2</span>], [<span class="number">4</span>, <span class="number">10</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">11</span>, <span class="number">4</span>],</span><br><span class="line">    [<span class="number">4</span>, <span class="number">12</span>, <span class="number">2</span>], [<span class="number">4</span>, <span class="number">13</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">14</span>, <span class="number">4</span>], [<span class="number">4</span>, <span class="number">15</span>, <span class="number">14</span>], [<span class="number">4</span>, <span class="number">16</span>, <span class="number">12</span>], [<span class="number">4</span>, <span class="number">17</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">4</span>, <span class="number">18</span>, <span class="number">8</span>], [<span class="number">4</span>, <span class="number">19</span>, <span class="number">5</span>], [<span class="number">4</span>, <span class="number">20</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">21</span>, <span class="number">7</span>], [<span class="number">4</span>, <span class="number">22</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">23</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">0</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">5</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">3</span>, <span class="number">3</span>], [<span class="number">5</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">8</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">10</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">11</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">12</span>, <span class="number">5</span>], [<span class="number">5</span>, <span class="number">13</span>, <span class="number">10</span>], [<span class="number">5</span>, <span class="number">14</span>, <span class="number">5</span>], [<span class="number">5</span>, <span class="number">15</span>, <span class="number">7</span>], [<span class="number">5</span>, <span class="number">16</span>, <span class="number">11</span>], [<span class="number">5</span>, <span class="number">17</span>, <span class="number">6</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">18</span>, <span class="number">0</span>], [<span class="number">5</span>, <span class="number">19</span>, <span class="number">5</span>], [<span class="number">5</span>, <span class="number">20</span>, <span class="number">3</span>], [<span class="number">5</span>, <span class="number">21</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">22</span>, <span class="number">2</span>], [<span class="number">5</span>, <span class="number">23</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">6</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">6</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">2</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">3</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">4</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">6</span>, <span class="number">6</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">7</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">9</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>], [<span class="number">6</span>, <span class="number">11</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">6</span>, <span class="number">12</span>, <span class="number">2</span>], [<span class="number">6</span>, <span class="number">13</span>, <span class="number">1</span>], [<span class="number">6</span>, <span class="number">14</span>, <span class="number">3</span>], [<span class="number">6</span>, <span class="number">15</span>, <span class="number">4</span>], [<span class="number">6</span>, <span class="number">16</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">17</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">6</span>, <span class="number">18</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">19</span>, <span class="number">0</span>], [<span class="number">6</span>, <span class="number">20</span>, <span class="number">1</span>], [<span class="number">6</span>, <span class="number">21</span>, <span class="number">2</span>], [<span class="number">6</span>, <span class="number">22</span>, <span class="number">2</span>], [<span class="number">6</span>, <span class="number">23</span>, <span class="number">6</span>]</span><br><span class="line">    ]</span><br><span class="line">range_color = [<span class="string">'#313695'</span>, <span class="string">'#4575b4'</span>, <span class="string">'#74add1'</span>, <span class="string">'#abd9e9'</span>, <span class="string">'#e0f3f8'</span>, <span class="string">'#ffffbf'</span>,</span><br><span class="line">               <span class="string">'#fee090'</span>, <span class="string">'#fdae61'</span>, <span class="string">'#f46d43'</span>, <span class="string">'#d73027'</span>, <span class="string">'#a50026'</span>]</span><br><span class="line">bar3d.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    x_axis,</span><br><span class="line">    y_axis,</span><br><span class="line">    [[d[<span class="number">1</span>], d[<span class="number">0</span>], d[<span class="number">2</span>]] <span class="keyword">for</span> d <span class="keyword">in</span> data],</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">    visual_range=[<span class="number">0</span>, <span class="number">20</span>],</span><br><span class="line">    visual_range_color=range_color,</span><br><span class="line">    grid3d_width=<span class="number">200</span>,</span><br><span class="line">    grid3d_depth=<span class="number">80</span>,</span><br><span class="line">)</span><br><span class="line">bar3d</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/pyecharts_img/3D 柱状图.png" style="width:600px;height:340px;"></p>
+<h3 id="4-饼状图"><a href="#4-饼状图" class="headerlink" title="4.饼状图"></a>4.饼状图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Pie</span><br><span class="line">attr = [<span class="string">"衬衫"</span>, <span class="string">"羊毛衫"</span>, <span class="string">"雪纺衫"</span>, <span class="string">"裤子"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>]</span><br><span class="line">v1 = [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>]</span><br><span class="line">pie = Pie(<span class="string">"饼图示例"</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, attr, v1, is_label_show=<span class="keyword">True</span>)</span><br><span class="line">pie</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/pie.html" target="_blank">饼图</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Pie</span><br><span class="line">pie = Pie(<span class="string">'各类电影中"好片"所占的比例'</span>, <span class="string">"数据来着豆瓣"</span>, title_pos=<span class="string">'center'</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"剧情"</span>, <span class="string">""</span>], [<span class="number">25</span>, <span class="number">75</span>], center=[<span class="number">10</span>, <span class="number">30</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>, )</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"奇幻"</span>, <span class="string">""</span>], [<span class="number">24</span>, <span class="number">76</span>], center=[<span class="number">30</span>, <span class="number">30</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>, legend_pos=<span class="string">'left'</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"爱情"</span>, <span class="string">""</span>], [<span class="number">14</span>, <span class="number">86</span>], center=[<span class="number">50</span>, <span class="number">30</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"惊悚"</span>, <span class="string">""</span>], [<span class="number">11</span>, <span class="number">89</span>], center=[<span class="number">70</span>, <span class="number">30</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"冒险"</span>, <span class="string">""</span>], [<span class="number">27</span>, <span class="number">73</span>], center=[<span class="number">90</span>, <span class="number">30</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"动作"</span>, <span class="string">""</span>], [<span class="number">15</span>, <span class="number">85</span>], center=[<span class="number">10</span>, <span class="number">70</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"喜剧"</span>, <span class="string">""</span>], [<span class="number">54</span>, <span class="number">46</span>], center=[<span class="number">30</span>, <span class="number">70</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"科幻"</span>, <span class="string">""</span>], [<span class="number">26</span>, <span class="number">74</span>], center=[<span class="number">50</span>, <span class="number">70</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"悬疑"</span>, <span class="string">""</span>], [<span class="number">25</span>, <span class="number">75</span>], center=[<span class="number">70</span>, <span class="number">70</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>)</span><br><span class="line">pie.add(<span class="string">""</span>, [<span class="string">"犯罪"</span>, <span class="string">""</span>], [<span class="number">28</span>, <span class="number">72</span>], center=[<span class="number">90</span>, <span class="number">70</span>], radius=[<span class="number">18</span>, <span class="number">24</span>], label_pos=<span class="string">'center'</span>, is_label_show=<span class="keyword">True</span>,</span><br><span class="line">        label_text_color=<span class="keyword">None</span>, is_legend_show=<span class="keyword">True</span>, legend_top=<span class="string">"center"</span>)</span><br><span class="line"><span class="comment"># pie.show_config()</span></span><br><span class="line">pie</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/pie2.html" target="_blank">组合饼图</a></p>
+<h3 id="5-散点图"><a href="#5-散点图" class="headerlink" title="5. 散点图"></a>5. 散点图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Scatter</span><br><span class="line"></span><br><span class="line">v1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>]</span><br><span class="line">v2 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>]</span><br><span class="line">scatter = Scatter(<span class="string">"散点图"</span>)</span><br><span class="line">scatter.add(<span class="string">"A"</span>, v1, v2)</span><br><span class="line">scatter.add(</span><br><span class="line">    <span class="string">"B"</span>,</span><br><span class="line">    v1[::<span class="number">-1</span>],</span><br><span class="line">    v2,</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">    visual_type=<span class="string">"size"</span>,</span><br><span class="line">    visual_range_size=[<span class="number">20</span>, <span class="number">80</span>],</span><br><span class="line">)</span><br><span class="line">scatter</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/scatter.html" target="_blank">散点图</a></p>
+<h3 id="6-gauge（仪表盘）"><a href="#6-gauge（仪表盘）" class="headerlink" title="6.  gauge（仪表盘）"></a>6.  gauge（仪表盘）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Gauge</span><br><span class="line"></span><br><span class="line">gauge = Gauge(<span class="string">"仪表盘示例"</span>)</span><br><span class="line">gauge.add(<span class="string">"业务指标"</span>, <span class="string">"完成率"</span>, <span class="number">66.66</span>)</span><br><span class="line">gauge</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/gauge.html" target="_blank">仪表盘图</a></p>
+<h3 id="7-关系图"><a href="#7-关系图" class="headerlink" title="7. 关系图"></a>7. 关系图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Graph</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">with</span> open(os.path.join(<span class="string">"fixtures"</span>, <span class="string">"weibo.json"</span>), <span class="string">"r"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    j = json.load(f)</span><br><span class="line">    nodes, links, categories, cont, mid, userl = j</span><br><span class="line">graph = Graph(<span class="string">"微博转发关系图"</span>, width=<span class="number">900</span>, height=<span class="number">600</span>)</span><br><span class="line">graph.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    nodes,</span><br><span class="line">    links,</span><br><span class="line">    categories,</span><br><span class="line">    label_pos=<span class="string">"right"</span>,</span><br><span class="line">    graph_repulsion=<span class="number">50</span>,</span><br><span class="line">    is_legend_show=<span class="keyword">False</span>,</span><br><span class="line">    line_curve=<span class="number">0.2</span>,</span><br><span class="line">    label_text_color=<span class="keyword">None</span>,</span><br><span class="line">)</span><br><span class="line">graph</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/graph.html" target="_blank">微博转发关系图</a></p>
+<h3 id="8-热力图"><a href="#8-热力图" class="headerlink" title="8. 热力图"></a>8. 热力图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> HeatMap</span><br><span class="line"></span><br><span class="line">begin = datetime.date(<span class="number">2017</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">end = datetime.date(<span class="number">2017</span>, <span class="number">12</span>, <span class="number">31</span>)</span><br><span class="line">data = [</span><br><span class="line">    [str(begin + datetime.timedelta(days=i)), random.randint(<span class="number">1000</span>, <span class="number">25000</span>)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range((end - begin).days + <span class="number">1</span>)</span><br><span class="line">]</span><br><span class="line">heatmap = HeatMap(<span class="string">"日历热力图示例"</span>, <span class="string">"某人 2017 年微信步数情况"</span>, width=<span class="number">900</span>)</span><br><span class="line">heatmap.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    data,</span><br><span class="line">    is_calendar_heatmap=<span class="keyword">True</span>,</span><br><span class="line">    visual_text_color=<span class="string">"#000"</span>,</span><br><span class="line">    visual_range_text=[<span class="string">""</span>, <span class="string">""</span>],</span><br><span class="line">    visual_range=[<span class="number">1000</span>, <span class="number">25000</span>],</span><br><span class="line">    calendar_cell_size=[<span class="string">"auto"</span>, <span class="number">30</span>],</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">    calendar_date_range=<span class="string">"2017"</span>,</span><br><span class="line">    visual_orient=<span class="string">"horizontal"</span>,</span><br><span class="line">    visual_pos=<span class="string">"center"</span>,</span><br><span class="line">    visual_top=<span class="string">"80%"</span>,</span><br><span class="line">    is_piecewise=<span class="keyword">True</span>,</span><br><span class="line">)</span><br><span class="line">heatmap</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/heatmap.html" target="_blank">日历热力图</a></p>
+<h3 id="9-K-线图"><a href="#9-K-线图" class="headerlink" title="9. K 线图"></a>9. K 线图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Kline</span><br><span class="line"></span><br><span class="line">v1 = [[<span class="number">2320.26</span>, <span class="number">2320.26</span>, <span class="number">2287.3</span>, <span class="number">2362.94</span>], [<span class="number">2300</span>, <span class="number">2291.3</span>, <span class="number">2288.26</span>, <span class="number">2308.38</span>],</span><br><span class="line">      [<span class="number">2295.35</span>, <span class="number">2346.5</span>, <span class="number">2295.35</span>, <span class="number">2345.92</span>], [<span class="number">2347.22</span>, <span class="number">2358.98</span>, <span class="number">2337.35</span>, <span class="number">2363.8</span>],</span><br><span class="line">      [<span class="number">2360.75</span>, <span class="number">2382.48</span>, <span class="number">2347.89</span>, <span class="number">2383.76</span>], [<span class="number">2383.43</span>, <span class="number">2385.42</span>, <span class="number">2371.23</span>, <span class="number">2391.82</span>],</span><br><span class="line">      [<span class="number">2377.41</span>, <span class="number">2419.02</span>, <span class="number">2369.57</span>, <span class="number">2421.15</span>], [<span class="number">2425.92</span>, <span class="number">2428.15</span>, <span class="number">2417.58</span>, <span class="number">2440.38</span>],</span><br><span class="line">      [<span class="number">2411</span>, <span class="number">2433.13</span>, <span class="number">2403.3</span>, <span class="number">2437.42</span>], [<span class="number">2432.68</span>, <span class="number">2334.48</span>, <span class="number">2427.7</span>, <span class="number">2441.73</span>],</span><br><span class="line">      [<span class="number">2430.69</span>, <span class="number">2418.53</span>, <span class="number">2394.22</span>, <span class="number">2433.89</span>], [<span class="number">2416.62</span>, <span class="number">2432.4</span>, <span class="number">2414.4</span>, <span class="number">2443.03</span>],</span><br><span class="line">      [<span class="number">2441.91</span>, <span class="number">2421.56</span>, <span class="number">2418.43</span>, <span class="number">2444.8</span>], [<span class="number">2420.26</span>, <span class="number">2382.91</span>, <span class="number">2373.53</span>, <span class="number">2427.07</span>],</span><br><span class="line">      [<span class="number">2383.49</span>, <span class="number">2397.18</span>, <span class="number">2370.61</span>, <span class="number">2397.94</span>], [<span class="number">2378.82</span>, <span class="number">2325.95</span>, <span class="number">2309.17</span>, <span class="number">2378.82</span>],</span><br><span class="line">      [<span class="number">2322.94</span>, <span class="number">2314.16</span>, <span class="number">2308.76</span>, <span class="number">2330.88</span>], [<span class="number">2320.62</span>, <span class="number">2325.82</span>, <span class="number">2315.01</span>, <span class="number">2338.78</span>],</span><br><span class="line">      [<span class="number">2313.74</span>, <span class="number">2293.34</span>, <span class="number">2289.89</span>, <span class="number">2340.71</span>], [<span class="number">2297.77</span>, <span class="number">2313.22</span>, <span class="number">2292.03</span>, <span class="number">2324.63</span>],</span><br><span class="line">      [<span class="number">2322.32</span>, <span class="number">2365.59</span>, <span class="number">2308.92</span>, <span class="number">2366.16</span>], [<span class="number">2364.54</span>, <span class="number">2359.51</span>, <span class="number">2330.86</span>, <span class="number">2369.65</span>],</span><br><span class="line">      [<span class="number">2332.08</span>, <span class="number">2273.4</span>, <span class="number">2259.25</span>, <span class="number">2333.54</span>], [<span class="number">2274.81</span>, <span class="number">2326.31</span>, <span class="number">2270.1</span>, <span class="number">2328.14</span>],</span><br><span class="line">      [<span class="number">2333.61</span>, <span class="number">2347.18</span>, <span class="number">2321.6</span>, <span class="number">2351.44</span>], [<span class="number">2340.44</span>, <span class="number">2324.29</span>, <span class="number">2304.27</span>, <span class="number">2352.02</span>],</span><br><span class="line">      [<span class="number">2326.42</span>, <span class="number">2318.61</span>, <span class="number">2314.59</span>, <span class="number">2333.67</span>], [<span class="number">2314.68</span>, <span class="number">2310.59</span>, <span class="number">2296.58</span>, <span class="number">2320.96</span>],</span><br><span class="line">      [<span class="number">2309.16</span>, <span class="number">2286.6</span>, <span class="number">2264.83</span>, <span class="number">2333.29</span>], [<span class="number">2282.17</span>, <span class="number">2263.97</span>, <span class="number">2253.25</span>, <span class="number">2286.33</span>],</span><br><span class="line">      [<span class="number">2255.77</span>, <span class="number">2270.28</span>, <span class="number">2253.31</span>, <span class="number">2276.22</span>]]</span><br><span class="line">kline = Kline(<span class="string">"K 线图示例"</span>)</span><br><span class="line">kline.add(<span class="string">"日K"</span>, [<span class="string">"2017/7/&#123;&#125;"</span>.format(i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">31</span>)], v1)</span><br><span class="line">kline</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/kline.html" target="_blank">K 线图</a></p>
+<h3 id="10-Map-地图"><a href="#10-Map-地图" class="headerlink" title="10. Map (地图)"></a>10. Map (地图)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Map</span><br><span class="line"></span><br><span class="line">value = [<span class="number">155</span>, <span class="number">10</span>, <span class="number">66</span>, <span class="number">78</span>, <span class="number">33</span>, <span class="number">80</span>, <span class="number">190</span>, <span class="number">53</span>, <span class="number">49.6</span>]</span><br><span class="line">attr = [</span><br><span class="line">    <span class="string">"福建"</span>, <span class="string">"山东"</span>, <span class="string">"北京"</span>, <span class="string">"上海"</span>, <span class="string">"甘肃"</span>, <span class="string">"新疆"</span>, <span class="string">"河南"</span>, <span class="string">"广西"</span>, <span class="string">"西藏"</span></span><br><span class="line">    ]</span><br><span class="line">map = Map(<span class="string">"Map 结合 VisualMap 示例"</span>, width=<span class="number">1000</span>, height=<span class="number">600</span>)</span><br><span class="line">map.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    attr,</span><br><span class="line">    value,</span><br><span class="line">    maptype=<span class="string">"china"</span>,</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">    visual_text_color=<span class="string">"#000"</span>,</span><br><span class="line">)</span><br><span class="line">map</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/pyecharts_img/Map 结合 VisualMap 示例.png" style="width:600px;height:340px;"></p>
+<h3 id="11-词云图"><a href="#11-词云图" class="headerlink" title="11.词云图"></a>11.词云图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> WordCloud</span><br><span class="line"></span><br><span class="line">name = [</span><br><span class="line">    <span class="string">'Sam S Club'</span>, <span class="string">'Macys'</span>, <span class="string">'Amy Schumer'</span>, <span class="string">'Jurassic World'</span>, <span class="string">'Charter Communications'</span>,</span><br><span class="line">    <span class="string">'Chick Fil A'</span>, <span class="string">'Planet Fitness'</span>, <span class="string">'Pitch Perfect'</span>, <span class="string">'Express'</span>, <span class="string">'Home'</span>, <span class="string">'Johnny Depp'</span>,</span><br><span class="line">    <span class="string">'Lena Dunham'</span>, <span class="string">'Lewis Hamilton'</span>, <span class="string">'KXAN'</span>, <span class="string">'Mary Ellen Mark'</span>, <span class="string">'Farrah Abraham'</span>,</span><br><span class="line">    <span class="string">'Rita Ora'</span>, <span class="string">'Serena Williams'</span>, <span class="string">'NCAA baseball tournament'</span>, <span class="string">'Point Break'</span>]</span><br><span class="line">value = [</span><br><span class="line">    <span class="number">10000</span>, <span class="number">6181</span>, <span class="number">4386</span>, <span class="number">4055</span>, <span class="number">2467</span>, <span class="number">2244</span>, <span class="number">1898</span>, <span class="number">1484</span>, <span class="number">1112</span>,</span><br><span class="line">    <span class="number">965</span>, <span class="number">847</span>, <span class="number">582</span>, <span class="number">555</span>, <span class="number">550</span>, <span class="number">462</span>, <span class="number">366</span>, <span class="number">360</span>, <span class="number">282</span>, <span class="number">273</span>, <span class="number">265</span>]</span><br><span class="line">wordcloud = WordCloud(width=<span class="number">900</span>, height=<span class="number">620</span>)</span><br><span class="line">wordcloud.add(<span class="string">""</span>, name, value, word_size_range=[<span class="number">20</span>, <span class="number">100</span>])</span><br><span class="line">wordcloud</span><br></pre></td></tr></table></figure>
+<p><a href="/assets/html/pyecharts/wordcloud.html" target="_blank">词云图</a></p>
+<h3 id="12-Geo（地理坐标系）"><a href="#12-Geo（地理坐标系）" class="headerlink" title="12. Geo（地理坐标系）"></a>12. Geo（地理坐标系）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> Geo</span><br><span class="line"></span><br><span class="line">data = [</span><br><span class="line">    (<span class="string">"海门"</span>, <span class="number">9</span>),(<span class="string">"鄂尔多斯"</span>, <span class="number">12</span>),(<span class="string">"招远"</span>, <span class="number">12</span>),(<span class="string">"舟山"</span>, <span class="number">12</span>),(<span class="string">"齐齐哈尔"</span>, <span class="number">14</span>),(<span class="string">"盐城"</span>, <span class="number">15</span>),</span><br><span class="line">    (<span class="string">"赤峰"</span>, <span class="number">16</span>),(<span class="string">"青岛"</span>, <span class="number">18</span>),(<span class="string">"乳山"</span>, <span class="number">18</span>),(<span class="string">"金昌"</span>, <span class="number">19</span>),(<span class="string">"泉州"</span>, <span class="number">21</span>),(<span class="string">"莱西"</span>, <span class="number">21</span>),</span><br><span class="line">    (<span class="string">"日照"</span>, <span class="number">21</span>),(<span class="string">"胶南"</span>, <span class="number">22</span>),(<span class="string">"南通"</span>, <span class="number">23</span>),(<span class="string">"拉萨"</span>, <span class="number">24</span>),(<span class="string">"云浮"</span>, <span class="number">24</span>),(<span class="string">"梅州"</span>, <span class="number">25</span>),</span><br><span class="line">    (<span class="string">"文登"</span>, <span class="number">25</span>),(<span class="string">"上海"</span>, <span class="number">25</span>),(<span class="string">"攀枝花"</span>, <span class="number">25</span>),(<span class="string">"威海"</span>, <span class="number">25</span>),(<span class="string">"承德"</span>, <span class="number">25</span>),(<span class="string">"厦门"</span>, <span class="number">26</span>),</span><br><span class="line">    (<span class="string">"汕尾"</span>, <span class="number">26</span>),(<span class="string">"潮州"</span>, <span class="number">26</span>),(<span class="string">"丹东"</span>, <span class="number">27</span>),(<span class="string">"太仓"</span>, <span class="number">27</span>),(<span class="string">"曲靖"</span>, <span class="number">27</span>),(<span class="string">"烟台"</span>, <span class="number">28</span>),</span><br><span class="line">    (<span class="string">"福州"</span>, <span class="number">29</span>),(<span class="string">"瓦房店"</span>, <span class="number">30</span>),(<span class="string">"即墨"</span>, <span class="number">30</span>),(<span class="string">"抚顺"</span>, <span class="number">31</span>),(<span class="string">"玉溪"</span>, <span class="number">31</span>),(<span class="string">"张家口"</span>, <span class="number">31</span>),</span><br><span class="line">    (<span class="string">"阳泉"</span>, <span class="number">31</span>),(<span class="string">"莱州"</span>, <span class="number">32</span>),(<span class="string">"湖州"</span>, <span class="number">32</span>),(<span class="string">"汕头"</span>, <span class="number">32</span>),(<span class="string">"昆山"</span>, <span class="number">33</span>),(<span class="string">"宁波"</span>, <span class="number">33</span>),</span><br><span class="line">    (<span class="string">"湛江"</span>, <span class="number">33</span>),(<span class="string">"揭阳"</span>, <span class="number">34</span>),(<span class="string">"荣成"</span>, <span class="number">34</span>),(<span class="string">"连云港"</span>, <span class="number">35</span>),(<span class="string">"葫芦岛"</span>, <span class="number">35</span>),(<span class="string">"常熟"</span>, <span class="number">36</span>),</span><br><span class="line">    (<span class="string">"东莞"</span>, <span class="number">36</span>),(<span class="string">"河源"</span>, <span class="number">36</span>),(<span class="string">"淮安"</span>, <span class="number">36</span>),(<span class="string">"泰州"</span>, <span class="number">36</span>),(<span class="string">"南宁"</span>, <span class="number">37</span>),(<span class="string">"营口"</span>, <span class="number">37</span>),</span><br><span class="line">    (<span class="string">"惠州"</span>, <span class="number">37</span>),(<span class="string">"江阴"</span>, <span class="number">37</span>),(<span class="string">"蓬莱"</span>, <span class="number">37</span>),(<span class="string">"韶关"</span>, <span class="number">38</span>),(<span class="string">"嘉峪关"</span>, <span class="number">38</span>),(<span class="string">"广州"</span>, <span class="number">38</span>),</span><br><span class="line">    (<span class="string">"延安"</span>, <span class="number">38</span>),(<span class="string">"太原"</span>, <span class="number">39</span>),(<span class="string">"清远"</span>, <span class="number">39</span>),(<span class="string">"中山"</span>, <span class="number">39</span>),(<span class="string">"昆明"</span>, <span class="number">39</span>),(<span class="string">"寿光"</span>, <span class="number">40</span>),</span><br><span class="line">    (<span class="string">"盘锦"</span>, <span class="number">40</span>),(<span class="string">"长治"</span>, <span class="number">41</span>),(<span class="string">"深圳"</span>, <span class="number">41</span>),(<span class="string">"珠海"</span>, <span class="number">42</span>),(<span class="string">"宿迁"</span>, <span class="number">43</span>),(<span class="string">"咸阳"</span>, <span class="number">43</span>),</span><br><span class="line">    (<span class="string">"铜川"</span>, <span class="number">44</span>),(<span class="string">"平度"</span>, <span class="number">44</span>),(<span class="string">"佛山"</span>, <span class="number">44</span>),(<span class="string">"海口"</span>, <span class="number">44</span>),(<span class="string">"江门"</span>, <span class="number">45</span>),(<span class="string">"章丘"</span>, <span class="number">45</span>),</span><br><span class="line">    (<span class="string">"肇庆"</span>, <span class="number">46</span>),(<span class="string">"大连"</span>, <span class="number">47</span>),(<span class="string">"临汾"</span>, <span class="number">47</span>),(<span class="string">"吴江"</span>, <span class="number">47</span>),(<span class="string">"石嘴山"</span>, <span class="number">49</span>),(<span class="string">"沈阳"</span>, <span class="number">50</span>),</span><br><span class="line">    (<span class="string">"苏州"</span>, <span class="number">50</span>),(<span class="string">"茂名"</span>, <span class="number">50</span>),(<span class="string">"嘉兴"</span>, <span class="number">51</span>),(<span class="string">"长春"</span>, <span class="number">51</span>),(<span class="string">"胶州"</span>, <span class="number">52</span>),(<span class="string">"银川"</span>, <span class="number">52</span>),</span><br><span class="line">    (<span class="string">"张家港"</span>, <span class="number">52</span>),(<span class="string">"三门峡"</span>, <span class="number">53</span>),(<span class="string">"锦州"</span>, <span class="number">54</span>),(<span class="string">"南昌"</span>, <span class="number">54</span>),(<span class="string">"柳州"</span>, <span class="number">54</span>),(<span class="string">"三亚"</span>, <span class="number">54</span>),</span><br><span class="line">    (<span class="string">"自贡"</span>, <span class="number">56</span>),(<span class="string">"吉林"</span>, <span class="number">56</span>),(<span class="string">"阳江"</span>, <span class="number">57</span>),(<span class="string">"泸州"</span>, <span class="number">57</span>),(<span class="string">"西宁"</span>, <span class="number">57</span>),(<span class="string">"宜宾"</span>, <span class="number">58</span>),</span><br><span class="line">    (<span class="string">"呼和浩特"</span>, <span class="number">58</span>),(<span class="string">"成都"</span>, <span class="number">58</span>),(<span class="string">"大同"</span>, <span class="number">58</span>),(<span class="string">"镇江"</span>, <span class="number">59</span>),(<span class="string">"桂林"</span>, <span class="number">59</span>),(<span class="string">"张家界"</span>, <span class="number">59</span>),</span><br><span class="line">    (<span class="string">"宜兴"</span>, <span class="number">59</span>),(<span class="string">"北海"</span>, <span class="number">60</span>),(<span class="string">"西安"</span>, <span class="number">61</span>),(<span class="string">"金坛"</span>, <span class="number">62</span>),(<span class="string">"东营"</span>, <span class="number">62</span>),(<span class="string">"牡丹江"</span>, <span class="number">63</span>),</span><br><span class="line">    (<span class="string">"遵义"</span>, <span class="number">63</span>),(<span class="string">"绍兴"</span>, <span class="number">63</span>),(<span class="string">"扬州"</span>, <span class="number">64</span>),(<span class="string">"常州"</span>, <span class="number">64</span>),(<span class="string">"潍坊"</span>, <span class="number">65</span>),(<span class="string">"重庆"</span>, <span class="number">66</span>),</span><br><span class="line">    (<span class="string">"台州"</span>, <span class="number">67</span>),(<span class="string">"南京"</span>, <span class="number">67</span>),(<span class="string">"滨州"</span>, <span class="number">70</span>),(<span class="string">"贵阳"</span>, <span class="number">71</span>),(<span class="string">"无锡"</span>, <span class="number">71</span>),(<span class="string">"本溪"</span>, <span class="number">71</span>),</span><br><span class="line">    (<span class="string">"克拉玛依"</span>, <span class="number">72</span>),(<span class="string">"渭南"</span>, <span class="number">72</span>),(<span class="string">"马鞍山"</span>, <span class="number">72</span>),(<span class="string">"宝鸡"</span>, <span class="number">72</span>),(<span class="string">"焦作"</span>, <span class="number">75</span>),(<span class="string">"句容"</span>, <span class="number">75</span>),</span><br><span class="line">    (<span class="string">"北京"</span>, <span class="number">79</span>),(<span class="string">"徐州"</span>, <span class="number">79</span>),(<span class="string">"衡水"</span>, <span class="number">80</span>),(<span class="string">"包头"</span>, <span class="number">80</span>),(<span class="string">"绵阳"</span>, <span class="number">80</span>),(<span class="string">"乌鲁木齐"</span>, <span class="number">84</span>),</span><br><span class="line">    (<span class="string">"枣庄"</span>, <span class="number">84</span>),(<span class="string">"杭州"</span>, <span class="number">84</span>),(<span class="string">"淄博"</span>, <span class="number">85</span>),(<span class="string">"鞍山"</span>, <span class="number">86</span>),(<span class="string">"溧阳"</span>, <span class="number">86</span>),(<span class="string">"库尔勒"</span>, <span class="number">86</span>),</span><br><span class="line">    (<span class="string">"安阳"</span>, <span class="number">90</span>),(<span class="string">"开封"</span>, <span class="number">90</span>),(<span class="string">"济南"</span>, <span class="number">92</span>),(<span class="string">"德阳"</span>, <span class="number">93</span>),(<span class="string">"温州"</span>, <span class="number">95</span>),(<span class="string">"九江"</span>, <span class="number">96</span>),</span><br><span class="line">    (<span class="string">"邯郸"</span>, <span class="number">98</span>),(<span class="string">"临安"</span>, <span class="number">99</span>),(<span class="string">"兰州"</span>, <span class="number">99</span>),(<span class="string">"沧州"</span>, <span class="number">100</span>),(<span class="string">"临沂"</span>, <span class="number">103</span>),(<span class="string">"南充"</span>, <span class="number">104</span>),</span><br><span class="line">    (<span class="string">"天津"</span>, <span class="number">105</span>),(<span class="string">"富阳"</span>, <span class="number">106</span>),(<span class="string">"泰安"</span>, <span class="number">112</span>),(<span class="string">"诸暨"</span>, <span class="number">112</span>),(<span class="string">"郑州"</span>, <span class="number">113</span>),(<span class="string">"哈尔滨"</span>, <span class="number">114</span>),</span><br><span class="line">    (<span class="string">"聊城"</span>, <span class="number">116</span>),(<span class="string">"芜湖"</span>, <span class="number">117</span>),(<span class="string">"唐山"</span>, <span class="number">119</span>),(<span class="string">"平顶山"</span>, <span class="number">119</span>),(<span class="string">"邢台"</span>, <span class="number">119</span>),(<span class="string">"德州"</span>, <span class="number">120</span>),</span><br><span class="line">    (<span class="string">"济宁"</span>, <span class="number">120</span>),(<span class="string">"荆州"</span>, <span class="number">127</span>),(<span class="string">"宜昌"</span>, <span class="number">130</span>),(<span class="string">"义乌"</span>, <span class="number">132</span>),(<span class="string">"丽水"</span>, <span class="number">133</span>),(<span class="string">"洛阳"</span>, <span class="number">134</span>),</span><br><span class="line">    (<span class="string">"秦皇岛"</span>, <span class="number">136</span>),(<span class="string">"株洲"</span>, <span class="number">143</span>),(<span class="string">"石家庄"</span>, <span class="number">147</span>),(<span class="string">"莱芜"</span>, <span class="number">148</span>),(<span class="string">"常德"</span>, <span class="number">152</span>),(<span class="string">"保定"</span>, <span class="number">153</span>),</span><br><span class="line">    (<span class="string">"湘潭"</span>, <span class="number">154</span>),(<span class="string">"金华"</span>, <span class="number">157</span>),(<span class="string">"岳阳"</span>, <span class="number">169</span>),(<span class="string">"长沙"</span>, <span class="number">175</span>),(<span class="string">"衢州"</span>, <span class="number">177</span>),(<span class="string">"廊坊"</span>, <span class="number">193</span>),</span><br><span class="line">    (<span class="string">"菏泽"</span>, <span class="number">194</span>),(<span class="string">"合肥"</span>, <span class="number">229</span>),(<span class="string">"武汉"</span>, <span class="number">273</span>),(<span class="string">"大庆"</span>, <span class="number">279</span>)]</span><br><span class="line"></span><br><span class="line">geo = Geo(</span><br><span class="line">    <span class="string">"全国主要城市空气质量"</span>,</span><br><span class="line">    <span class="string">"data from pm2.5"</span>,</span><br><span class="line">    title_color=<span class="string">"#fff"</span>,</span><br><span class="line">    title_pos=<span class="string">"center"</span>,</span><br><span class="line">    width=<span class="number">1000</span>,</span><br><span class="line">    height=<span class="number">600</span>,</span><br><span class="line">    background_color=<span class="string">"#404a59"</span>,</span><br><span class="line">)</span><br><span class="line">attr, value = geo.cast(data)</span><br><span class="line">geo.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    attr,</span><br><span class="line">    value,</span><br><span class="line">    visual_range=[<span class="number">0</span>, <span class="number">200</span>],</span><br><span class="line">    visual_text_color=<span class="string">"#fff"</span>,</span><br><span class="line">    symbol_size=<span class="number">15</span>,</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">)</span><br><span class="line">geo</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/pyecharts_img/全国主要城市空气质量.png" style="width:600px;height:340px;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">geo = Geo(</span><br><span class="line">    <span class="string">"全国主要城市空气质量"</span>,</span><br><span class="line">    <span class="string">"data from pm2.5"</span>,</span><br><span class="line">    title_color=<span class="string">"#fff"</span>,</span><br><span class="line">    title_pos=<span class="string">"center"</span>,</span><br><span class="line">    width=<span class="number">1000</span>,</span><br><span class="line">    height=<span class="number">600</span>,</span><br><span class="line">    background_color=<span class="string">"#404a59"</span>,</span><br><span class="line">)</span><br><span class="line">attr, value = geo.cast(data)</span><br><span class="line">geo.add(</span><br><span class="line">    <span class="string">""</span>,</span><br><span class="line">    attr,</span><br><span class="line">    value,</span><br><span class="line">    type=<span class="string">"heatmap"</span>,</span><br><span class="line">    is_visualmap=<span class="keyword">True</span>,</span><br><span class="line">    visual_range=[<span class="number">0</span>, <span class="number">300</span>],</span><br><span class="line">    visual_text_color=<span class="string">"#fff"</span>,</span><br><span class="line">)</span><br><span class="line">geo</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/blogImg/pyecharts_img/全国主要城市空气质量1.png" style="width:600px;height:340px;"></p>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Data-Analysis/" rel="tag"><i class="fa fa-tag"></i> Data Analysis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/12/lagou/" rel="next" title="拉勾网python爬虫岗位招聘信息爬取和分析">
+                <i class="fa fa-chevron-left"></i> 拉勾网python爬虫岗位招聘信息爬取和分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/Lucifer.jpg"
+                alt="Lucifer" />
+            
+              <p class="site-author-name" itemprop="name">Lucifer</p>
+              <p class="site-description motion-element" itemprop="description">Python   数据分析   非专业码农</p>
+			<!--
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=110 src="//music.163.com/outchain/player?type=2&id=27180681&auto=1&height=66"></iframe>
+			-->
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/luciferarmy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/15001574fae2" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="Git教程" target="_blank">Git教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/" title="W3school" target="_blank">W3school</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECharts"><span class="nav-number">1.</span> <span class="nav-text">ECharts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyecharts"><span class="nav-number">2.</span> <span class="nav-text">pyecharts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可以展示的图表类型"><span class="nav-number">2.1.</span> <span class="nav-text">可以展示的图表类型:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-折线图"><span class="nav-number">2.2.</span> <span class="nav-text">1. 折线图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-柱状图"><span class="nav-number">2.3.</span> <span class="nav-text">2. 柱状图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Bar3D-3D柱状图"><span class="nav-number">2.4.</span> <span class="nav-text">3. Bar3D (3D柱状图)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-饼状图"><span class="nav-number">2.5.</span> <span class="nav-text">4.饼状图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-散点图"><span class="nav-number">2.6.</span> <span class="nav-text">5. 散点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-gauge（仪表盘）"><span class="nav-number">2.7.</span> <span class="nav-text">6.  gauge（仪表盘）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-关系图"><span class="nav-number">2.8.</span> <span class="nav-text">7. 关系图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-热力图"><span class="nav-number">2.9.</span> <span class="nav-text">8. 热力图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-K-线图"><span class="nav-number">2.10.</span> <span class="nav-text">9. K 线图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Map-地图"><span class="nav-number">2.11.</span> <span class="nav-text">10. Map (地图)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-词云图"><span class="nav-number">2.12.</span> <span class="nav-text">11.词云图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-Geo（地理坐标系）"><span class="nav-number">2.13.</span> <span class="nav-text">12. Geo（地理坐标系）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 
+	<span itemprop="copyrightYear">2018</span>
+	<span class="with-love">
+    <i class="fa fa-user"></i>
+  	</span>
+	<span class="author" itemprop="copyrightHolder">Lucifer</span>
+	<!--
+	
+	<span class="post-meta-divider">|</span>
+	<span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span> 
+	<span class="post-meta-item-text">Site words total count&#58;</span> 
+	<span title="Site words total count">12.2k</span> 
+ 	 -->
+
+</div>
+
+
+
+<div class="theme-info">
+	<div class="powered-by">
+		<div class="busuanzi-count">
+			<span class="site-uv">
+		<i class="fa fa-user-md"></i> &nbsp;访客数
+		<span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+			</span>
+			<span class="site-pv">
+		<i class="fa fa-eye"></i> &nbsp;总访问量
+		<span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+			</span>
+		</div>
+	</div>
+	<span class="post-meta-divider">|</span>
+	<span class="post-count">博客全站共12.2k字</span>
+</div>
+
+<!--
+<span class="post-meta-divider">|</span>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+-->
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 --> 
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- Title动态变化 -->
+<script type="text/javascript" src="/js/src/autoTitle.js"></script>
+</html>
