@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="杂谈," />
+  <meta name="keywords" content="nginx," />
 
 
 
@@ -88,18 +88,21 @@
 
 
 
-<meta name="description" content="博客终于搭建起来了,写点小文章,欢迎大家来访~(_^^_)~">
-<meta name="keywords" content="杂谈">
+<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;Nginx是一款高性能的http 服务器,其特点是能够支持高并发(官方测试结果为5万并发)，并且cpu、内存等资源消耗却非常低，运行非常稳定. &amp;#160; &amp;#160; &amp;#160; &amp;#160;在web项目的中,我们经常使用nginx做分流和负载均衡.当网站的访问量达到一定程度后,为了解决并发，就可以使用nginx做负载均衡,提高网">
+<meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://luciferarmy.github.io/2016/08/23/hello-world/index.html">
+<meta property="og:title" content="Nginx静态资源和动态资源的分离">
+<meta property="og:url" content="http://luciferarmy.github.io/2017/09/16/Nginx_static_atuo/index.html">
 <meta property="og:site_name" content="Lucifer&#39;s Blog">
-<meta property="og:description" content="博客终于搭建起来了,写点小文章,欢迎大家来访~(_^^_)~">
+<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;Nginx是一款高性能的http 服务器,其特点是能够支持高并发(官方测试结果为5万并发)，并且cpu、内存等资源消耗却非常低，运行非常稳定. &amp;#160; &amp;#160; &amp;#160; &amp;#160;在web项目的中,我们经常使用nginx做分流和负载均衡.当网站的访问量达到一定程度后,为了解决并发，就可以使用nginx做负载均衡,提高网">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T06:41:51.362Z">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/nginx0.jpg">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/nginx_config_location.jpg">
+<meta property="og:updated_time" content="2018-11-19T01:50:26.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="博客终于搭建起来了,写点小文章,欢迎大家来访~(_^^_)~">
+<meta name="twitter:title" content="Nginx静态资源和动态资源的分离">
+<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;Nginx是一款高性能的http 服务器,其特点是能够支持高并发(官方测试结果为5万并发)，并且cpu、内存等资源消耗却非常低，运行非常稳定. &amp;#160; &amp;#160; &amp;#160; &amp;#160;在web项目的中,我们经常使用nginx做分流和负载均衡.当网站的访问量达到一定程度后,为了解决并发，就可以使用nginx做负载均衡,提高网">
+<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/nginx0.jpg">
 
 
 
@@ -129,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://luciferarmy.github.io/2016/08/23/hello-world/"/>
+  <link rel="canonical" href="http://luciferarmy.github.io/2017/09/16/Nginx_static_atuo/"/>
 
 
 
 
 
-  <title>Hello World | Lucifer's Blog</title>
+  <title>Nginx静态资源和动态资源的分离 | Lucifer's Blog</title>
   
 
 
@@ -327,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/2016/08/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/2017/09/16/Nginx_static_atuo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucifer">
@@ -344,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Nginx静态资源和动态资源的分离</h1>
         
 
         <div class="post-meta">
@@ -356,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-23T01:39:00+08:00">
-                2016-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T21:12:00+08:00">
+                2017-09-16
               </time>
             
 
@@ -379,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日记/" itemprop="url" rel="index">
-                    <span itemprop="name">日记</span>
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -415,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  22
+                  1,014
                 </span>
               
 
@@ -431,7 +434,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -452,8 +455,23 @@
       
 
       
-        <pre><code>博客终于搭建起来了,写点小文章,欢迎大家来访~(_^^_)~
-</code></pre>
+        <p>   <img src="/assets/blogImg/nginx0.jpg" alt=""></p>
+<p>&#160; &#160; &#160; &#160;Nginx是一款<strong>高性能的http 服务器</strong>,其特点是能够支持高并发(官方测试结果为5万并发)，并且cpu、内存等资源消耗却非常低，运行非常稳定.</p>
+<p>&#160; &#160; &#160; &#160;在web项目的中,我们经常使用nginx做<strong>分流</strong>和<strong>负载均衡</strong>.当网站的访问量达到一定程度后,为了解决并发，就可以使用nginx做负载均衡,提高网站并发量,解决性能瓶颈.<br>实际上,nginx可以<strong>实现静态资源和动态资源的分离</strong>,将静态资源交给Nginx处理，而把动态资源转发给具体的web服务器进行处理,从而提高服务器处理效率.那么,该如何实现呢?</p>
+<a id="more"></a>
+<p>其实就是对nginx的<strong>location</strong>进行配置了.<br>如下整理了关于配置的一些资料,分享下并作为笔记记录供以后学习和参考.</p>
+<p>语法规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">location [=|~|~*|^~] /uri/ &#123;</span><br><span class="line">   …</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">= 开头表示精确匹配</span><br><span class="line"></span><br><span class="line">^~ 开头表示uri以某个常规字符串开头，理解为匹配 url路径即可。nginx不对url做编码，因此请求为/static/20%/aa，可以被规则^~ /static/ /aa匹配到（注意是空格）。</span><br><span class="line"></span><br><span class="line">~ 开头表示区分大小写的正则匹配</span><br><span class="line"></span><br><span class="line">~*  开头表示不区分大小写的正则匹配</span><br><span class="line"></span><br><span class="line">!~和!~*分别为区分大小写不匹配及不区分大小写不匹配 的正则</span><br><span class="line"></span><br><span class="line">/ 通用匹配，任何请求都会匹配到</span><br></pre></td></tr></table></figure>
+<p>多个location配置的情况下匹配顺序为：</p>
+<p>首先匹配 =，其次匹配^~, 其次是按文件中顺序的正则匹配，最后是交给 / 通用匹配。当有匹配成功时候，停止匹配，按当前匹配规则处理请求。</p>
+<p>   <img src="/assets/blogImg/nginx_config_location.jpg" alt=""></p>
+<p>举例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">location = / &#123;</span><br><span class="line">   #规则A</span><br><span class="line">&#125;</span><br><span class="line">location = /login &#123;</span><br><span class="line">   #规则B</span><br><span class="line">&#125;</span><br><span class="line">location ^~ /static/ &#123;</span><br><span class="line">   #规则C</span><br><span class="line">&#125;</span><br><span class="line">location ~ \.(gif|jpg|png|js|css)$ &#123;</span><br><span class="line">   #规则D</span><br><span class="line">&#125;</span><br><span class="line">location ~* \.png$ &#123;</span><br><span class="line">   #规则E</span><br><span class="line">&#125;</span><br><span class="line">location !~ \.xhtml$ &#123;</span><br><span class="line">   #规则F</span><br><span class="line">&#125;</span><br><span class="line">location !~* \.xhtml$ &#123;</span><br><span class="line">   #规则G</span><br><span class="line">&#125;</span><br><span class="line">location / &#123;</span><br><span class="line">   #规则H</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么产生的效果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">访问根目录/， 比如 http://localhost/ 将匹配规则A</span><br><span class="line">访问 http://localhost/login 将匹配规则B，http://localhost/register 则匹配规则H</span><br><span class="line">访问 http://localhost/static/a.html 将匹配规则C</span><br><span class="line">访问 http://localhost/a.gif, http://localhost/b.jpg 将匹配规则D和规则E，但是规则D顺序优先，规则E不起作用</span><br><span class="line">访问 http://localhost/static/c.png 则优先匹配到规则C</span><br><span class="line">访问 http://localhost/a.PNG 则匹配规则E，而不会匹配规则D，因为规则E不区分大小写。</span><br><span class="line">访问 http://localhost/a.xhtml 不会匹配规则F和规则G</span><br><span class="line">访问 http://localhost/a.XHTML不会匹配规则G，因为不区分大小写。</span><br><span class="line">规则F，规则G属于排除法，符合匹配规则但是不会匹配到，所以想想看实际应用中哪里会用到。</span><br></pre></td></tr></table></figure>
+<p>实际使用中，个人觉得至少有三个匹配规则定义，如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#直接匹配网站根，通过域名访问网站首页比较频繁，使用这个会加速处理，官网如是说。</span><br><span class="line">#这里是直接转发给后端应用服务器了，也可以是一个静态首页</span><br><span class="line"># 第一个必选规则</span><br><span class="line">location = / &#123;</span><br><span class="line">    proxy_pass http://tomcat:8080/index</span><br><span class="line">&#125;</span><br><span class="line"># 第二个必选规则是处理静态文件请求，这是nginx作为http服务器的强项</span><br><span class="line"># 有两种配置模式，目录匹配或后缀匹配,任选其一或搭配使用</span><br><span class="line">location ^~ /static/ &#123;</span><br><span class="line">    # 静态资源都在 static 文件夹下</span><br><span class="line">    root /webroot/static/;</span><br><span class="line">&#125;</span><br><span class="line">location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ &#123;</span><br><span class="line">    root /webroot/res/;</span><br><span class="line">&#125;</span><br><span class="line">#第三个规则就是通用规则，用来转发动态请求到后端应用服务器</span><br><span class="line">#非静态文件请求就默认是动态请求，自己根据实际把握</span><br><span class="line">#毕竟目前的一些框架的流行，带.php,.jsp后缀的情况很少了</span><br><span class="line">location / &#123;</span><br><span class="line">    proxy_pass http://tomcat:8080/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -475,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂谈/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
+            <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
           
         </div>
       
@@ -488,14 +506,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/16/async_note/" rel="next" title="同步异步与阻塞非阻塞的区别">
+                <i class="fa fa-chevron-left"></i> 同步异步与阻塞非阻塞的区别
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/24/weber/" rel="prev" title="“钢铁牢笼”－《新教伦理与资本主义精神》有感">
-                “钢铁牢笼”－《新教伦理与资本主义精神》有感 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/16/WSGI_webserver_webframwork/" rel="prev" title="WSGI,web服务器,web框架之间的关系">
+                WSGI,web服务器,web框架之间的关系 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
