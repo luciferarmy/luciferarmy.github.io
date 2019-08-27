@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luciferarmy.github.io/2019/08/26/appium/</loc>
+    
+    <lastmod>2019-08-27T14:52:01.154Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luciferarmy.github.io/2017/04/01/Centos7%20%E5%AE%89%E8%A3%85mysql%E5%BC%82%E5%B8%B8/</loc>
     
     <lastmod>2018-11-19T01:57:32.555Z</lastmod>
@@ -254,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo2.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
@@ -268,7 +275,7 @@
   </url>
   
   <url>
-    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo.html</loc>
+    <loc>http://luciferarmy.github.io/assets/demo/jiugongge_demo2.html</loc>
     
     <lastmod>2018-08-22T17:03:38.634Z</lastmod>
     
