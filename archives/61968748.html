@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,34 +75,34 @@
 
 
 
-  <meta name="keywords" content="wsgi,Web服务," />
+  <meta name="keywords" content="笔记,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Lucifer's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Lucifer's Blog" type="application/atom+xml">
 
 
 
 
 
 
-<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
-<meta name="keywords" content="wsgi,Web服务">
+<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;对于阻塞非阻塞与同步异步的关系与区别一直不是很理解,于是在网上查找了下相关资料,在此记录下,以便后面回顾学习。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。  同步与异步  &amp;#160; &amp;#160; &amp;#160; &amp;#160;同步和异步关注的是消息通信机制 (synchronous commu">
+<meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSGI,web服务器,web框架之间的关系">
-<meta property="og:url" content="http://luciferarmy.github.io/2017/09/16/WSGI_webserver_webframwork/index.html">
+<meta property="og:title" content="同步异步与阻塞非阻塞的区别">
+<meta property="og:url" content="http://luciferarmy.github.io/archives/61968748.html">
 <meta property="og:site_name" content="Lucifer&#39;s Blog">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
+<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;对于阻塞非阻塞与同步异步的关系与区别一直不是很理解,于是在网上查找了下相关资料,在此记录下,以便后面回顾学习。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。  同步与异步  &amp;#160; &amp;#160; &amp;#160; &amp;#160;同步和异步关注的是消息通信机制 (synchronous commu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi1.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi2.png">
-<meta property="og:updated_time" content="2018-10-25T06:42:03.428Z">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/sync_async_block_noblock1.png">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/sync_async_block_noblock2.png">
+<meta property="og:updated_time" content="2018-10-25T06:41:41.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WSGI,web服务器,web框架之间的关系">
-<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
-<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi1.png">
+<meta name="twitter:title" content="同步异步与阻塞非阻塞的区别">
+<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;对于阻塞非阻塞与同步异步的关系与区别一直不是很理解,于是在网上查找了下相关资料,在此记录下,以便后面回顾学习。 “阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。  同步与异步  &amp;#160; &amp;#160; &amp;#160; &amp;#160;同步和异步关注的是消息通信机制 (synchronous commu">
+<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/sync_async_block_noblock1.png">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://luciferarmy.github.io/2017/09/16/WSGI_webserver_webframwork/"/>
+  <link rel="canonical" href="http://luciferarmy.github.io/archives/61968748.html">
 
 
 
 
 
-  <title>WSGI,web服务器,web框架之间的关系 | Lucifer's Blog</title>
+  <title>同步异步与阻塞非阻塞的区别 | Lucifer's Blog</title>
   
 
 
@@ -160,14 +160,14 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-	<a href="https://github.com/luciferarmy" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<a href="https://github.com/luciferarmy" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lucifer's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -227,7 +227,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -237,7 +237,7 @@
         <li class="menu-item menu-item-link">
           <a href="/link" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
             
             链接
           </a>
@@ -247,7 +247,7 @@
         <li class="menu-item menu-item-schedule">
           <a href="/schedule/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
             
             日程表
           </a>
@@ -257,7 +257,7 @@
         <li class="menu-item menu-item-guestbook">
           <a href="/guestbook" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br>
             
             留言
           </a>
@@ -270,7 +270,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -291,9 +291,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -330,11 +328,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/2017/09/16/WSGI_webserver_webframwork/">
+    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/archives/61968748.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucifer">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/Lucifer.jpg">
     </span>
 
@@ -347,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WSGI,web服务器,web框架之间的关系</h1>
+          <h1 class="post-title" itemprop="name headline">同步异步与阻塞非阻塞的区别</h1>
         
 
         <div class="post-meta">
@@ -359,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T22:24:00+08:00">
-                2017-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-16T19:32:00+08:00">
+                2017-07-16
               </time>
             
 
@@ -370,7 +368,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -403,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -418,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  877
+                  820
                 </span>
               
 
@@ -455,40 +453,27 @@
       
 
       
-        <p>&#160; &#160; &#160; &#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系.</p>
-<p>&#160; &#160; &#160; &#160;简答的说:<br>客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经过了 web服务器层，WSGI层，web框架层，这三个层次。不同的层次其作用也不同，下面简要介绍各层的作用。</p>
+        <p>&#160; &#160; &#160; &#160;对于阻塞非阻塞与同步异步的关系与区别一直不是很理解,于是在网上查找了下相关资料,在此记录下,以便后面回顾学习。</p>
+<p>“阻塞”与”非阻塞”与”同步”与“异步”不能简单的从字面理解，提供一个从分布式系统角度的回答。</p>
+<ol>
+<li>同步与异步</li>
+</ol>
+<p>&#160; &#160; &#160; &#160;同步和异步关注的是<strong>消息通信机制</strong> (synchronous communication/ asynchronous communication)<br>&#160; &#160; &#160; &#160;所谓<strong>同步</strong>，就是在发出一个<strong>调用</strong>时，在没有得到结果之前，该<strong>调用</strong>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<strong>调用者</strong>主动等待这个<strong>调用</strong>的结果。</p>
 <a id="more"></a>
-<p>如图:<br><img src="/assets/blogImg/wsgi1.png" alt=""></p>
-<p><strong>Web服务器层</strong><br>Web服务器是一类特殊的服务器，其作用是主要是接收 HTTP 请求并返回响应.</p>
-<ol>
-<li><p>要运行web应用，必须有 web server;比如我们熟悉的apache、nginx，或者python中的gunicorn;</p>
-</li>
-<li><p>在flask框架中,werkzeug模块提供了web server,即是WSGIServer，下图的黄色Server部分;</p>
-</li>
+<p>&#160; &#160; &#160; &#160;而<strong>异步</strong>则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<strong>调用</strong>发出后，<strong>被调用者</strong>通过状态、通知来通知调用者，或通过回调函数处理这个调用。</p>
+<p>典型的异步编程模型比如Node.js</p>
+<p>举个通俗的例子：<br>&#160; &#160; &#160; &#160;你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。<br>而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。</p>
+<ol start="2">
+<li>阻塞与非阻塞</li>
 </ol>
-<p><strong>Web框架层</strong><br>&#160; &#160; &#160; &#160;Web框架的作用主要是方便我们开发 web应用程序，HTTP请求的动态数据就是由 web框架层来提供的。<br>&#160; &#160; &#160; &#160;常见的 web框架有Flask，Django等，我们以 Flask 框架为例子，展示 web框架的作用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/hello&apos;)</span><br><span class="line">def hello_world():</span><br><span class="line">    return &apos;Hello World!&apos;</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    app.run(host=&apos;0.0.0.0&apos;, port=8080)</span><br></pre></td></tr></table></figure>
-<p>&#160; &#160; &#160; &#160;以上代码就创建了一个web应用程序对象 app。使用Web框架,并不需要关心如何接收 HTTP 请求和如何将响应结果返回给用户,只需要关心如何实现业务的逻辑即可。<br>每个Python Web应用都是一个可调用（callable）的对象。在 flask中，这个对象就是 app = Flask(name) 创建出来的 app，就是上图中的绿色Application部分;</p>
-<p><strong>WSGI层</strong><br>&#160; &#160; &#160; &#160;<strong>WSGI</strong> 全称为 Web Server Gateway Interface,它不是服务器，只是一种<strong>接口</strong>,只适用于 Python 语言，其定义了web服务器和 web应用之间的接口规范。只要 web服务器和 web应用都遵守WSGI协议，那么 web服务器和 web应用就可以进行交互.</p>
-<p>WSGI接口编写示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def application(env, start_response):</span><br><span class="line">    start_response(&apos;200 OK&apos;, [(&apos;Content-Type&apos;, &apos;text/html&apos;)])</span><br><span class="line">    return [b&quot;Hello World&quot;]</span><br></pre></td></tr></table></figure>
-<p>上述代码就是一个完整的 WSGI接口，application()函数就是符合WSGI标准的一个HTTP处理函数</p>
-<p>参数说明：</p>
-<ol>
-<li>env是一个字典，包含了类似 HTTP_HOST，HOST_USER_AGENT，SERVER_PROTOCO 等环境变量。</li>
-<li>start_response则是一个方法，该方法接受两个参数，分别是status，response_headers。</li>
-</ol>
-<p>&#160; &#160; &#160; &#160;application方法的主要作用是设置 http 响应的状态码和 Content-Type 等头部信息，并返回响应的具体结果。<br>&#160; &#160; &#160; &#160;当一个支持 WSGI的 web服务器接收到客户端的请求后，便会调用这个 application 方法，并传给它两个参数，start_response 和 application息。</p>
-<p><strong>总结:</strong></p>
-<p><img src="/assets/blogImg/wsgi2.png" alt=""></p>
-<ol>
-<li><p>WSGI将Web服务分成两个部分:服务器和应用程序。</p>
-</li>
-<li><p>WGSI服务器只负责与网络相关的两件事：<br>  接收浏览器的HTTP请求、向浏览器发送HTTP应答；而对HTTP请求的具体处理逻辑，则通过调用WSGI应用程序进行。</p>
-</li>
-</ol>
-<p>值得指出的是，WSGI 是一种协议，需要区分几个相近的名词：<br><strong>uwsgi</strong><br>一种通讯协议，uWSGI服务器正是使用了uwsgi协议实现网络通讯</p>
-<p><strong>uWSGI</strong><br>实现了 uwsgi 和 WSGI 两种协议的web服务器。注意 uWSGI 本质上也是一种 web服务器，处于上面描述的三层结构中的 web服务器层。</p>
+<p>阻塞和非阻塞关注的是<strong>程序在等待调用结果（消息，返回值）时的状态</strong>.</p>
+<p><strong>阻塞调用</strong>是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。</p>
+<p><strong>非阻塞调用</strong>指在不能立刻得到结果之前，该调用不会阻塞当前线程。</p>
+<p>还是上面的例子，<br>&#160; &#160; &#160; &#160;你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。<br>在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。</p>
+<p>==<strong>总结:</strong>==</p>
+<p><strong>阻塞，非阻塞</strong>：进程/线程要访问的数据是否就绪，进程/线程是否需要等待；<br><strong>同步，异步</strong>：访问数据的方式，同步需要主动读写数据，在读写数据的过程中还是会阻塞；异步只需要I/O操作完成的通知，并不主动读写数据，由操作系统内核完成数据的读写。</p>
+<p>在处理 IO 的时候，阻塞和非阻塞都是同步 IO。<br>只有使用了特殊的 API 才是异步 IO。</p>
+<p>   <img src="/assets/blogImg/sync_async_block_noblock1.png" alt><br>   <img src="/assets/blogImg/sync_async_block_noblock2.png" alt></p>
 
       
     </div>
@@ -504,6 +489,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lucifer 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Lucifer 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -511,14 +525,27 @@
       
         <div class="post-tags">
           
-            <a href="/tags/wsgi/" rel="tag"><i class="fa fa-tag"></i> wsgi</a>
-          
-            <a href="/tags/Web服务/" rel="tag"><i class="fa fa-tag"></i> Web服务</a>
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
         </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
       
       
 
@@ -526,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/16/Nginx_static_atuo/" rel="next" title="Nginx静态资源和动态资源的分离">
-                <i class="fa fa-chevron-left"></i> Nginx静态资源和动态资源的分离
+              <a href="/archives/af5adf59.html" rel="next" title="git pull和本地文件冲突">
+                <i class="fa fa-chevron-left"></i> git pull和本地文件冲突
               </a>
             
           </div>
@@ -536,8 +563,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/20/Django_mysql_datetime/" rel="prev" title="Django时间数据与保存到MySQL的时间相差8小时问题">
-                Django时间数据与保存到MySQL的时间相差8小时问题 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/30ca2d8b.html" rel="prev" title="Nginx静态资源和动态资源的分离">
+                Nginx静态资源和动态资源的分离 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -568,6 +595,11 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NjUwNS8yMzAxNQ=="></div>
+    </div>
+
+  
 
 
 
@@ -595,9 +627,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/Lucifer.jpg"
-                alt="Lucifer" />
+              <img class="site-author-image" itemprop="image" src="/images/Lucifer.jpg" alt="Lucifer">
             
               <p class="site-author-name" itemprop="name">Lucifer</p>
               <p class="site-description motion-element" itemprop="description">Python  爬虫  数据分析</p>
@@ -918,6 +948,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1261,6 +1302,31 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
   
 
   

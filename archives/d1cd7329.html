@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,41 +75,34 @@
 
 
 
-  <meta name="keywords" content="Lunix,flask," />
+  <meta name="keywords" content="wsgi,Web服务,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Lucifer's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Lucifer's Blog" type="application/atom+xml">
 
 
 
 
 
 
-<meta name="description" content="本文介绍如何在阿里云部署和发布项目 &amp;#160; &amp;#160; &amp;#160; &amp;#160;基于ubuntu 16.04系统，使用 Gunicorn + Nginx 进行布署，云服务器为阿里云">
-<meta name="keywords" content="Lunix,flask">
+<meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
+<meta name="keywords" content="wsgi,Web服务">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何将flask项目部署到阿里云服务器">
-<meta property="og:url" content="http://luciferarmy.github.io/2017/04/06/public_flask/index.html">
+<meta property="og:title" content="WSGI,web服务器,web框架之间的关系">
+<meta property="og:url" content="http://luciferarmy.github.io/archives/d1cd7329.html">
 <meta property="og:site_name" content="Lucifer&#39;s Blog">
-<meta property="og:description" content="本文介绍如何在阿里云部署和发布项目 &amp;#160; &amp;#160; &amp;#160; &amp;#160;基于ubuntu 16.04系统，使用 Gunicorn + Nginx 进行布署，云服务器为阿里云">
+<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/aliyun_server.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/aliyun_server_ubuntu.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/instance.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/root.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/security_group.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/security_group2.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/shell.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/setup1.png">
-<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/setup2.png">
-<meta property="og:updated_time" content="2018-10-25T06:41:59.631Z">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi1.png">
+<meta property="og:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi2.png">
+<meta property="og:updated_time" content="2018-10-25T06:42:03.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何将flask项目部署到阿里云服务器">
-<meta name="twitter:description" content="本文介绍如何在阿里云部署和发布项目 &amp;#160; &amp;#160; &amp;#160; &amp;#160;基于ubuntu 16.04系统，使用 Gunicorn + Nginx 进行布署，云服务器为阿里云">
-<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/flask_public_img/aliyun_server.png">
+<meta name="twitter:title" content="WSGI,web服务器,web框架之间的关系">
+<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系. &amp;#160; &amp;#160; &amp;#160; &amp;#160;简答的说:客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经">
+<meta name="twitter:image" content="http://luciferarmy.github.io/assets/blogImg/wsgi1.png">
 
 
 
@@ -139,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://luciferarmy.github.io/2017/04/06/public_flask/"/>
+  <link rel="canonical" href="http://luciferarmy.github.io/archives/d1cd7329.html">
 
 
 
 
 
-  <title>如何将flask项目部署到阿里云服务器 | Lucifer's Blog</title>
+  <title>WSGI,web服务器,web框架之间的关系 | Lucifer's Blog</title>
   
 
 
@@ -167,14 +160,14 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-	<a href="https://github.com/luciferarmy" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<a href="https://github.com/luciferarmy" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Lucifer's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -204,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -214,7 +207,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -224,7 +217,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -234,7 +227,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -244,7 +237,7 @@
         <li class="menu-item menu-item-link">
           <a href="/link" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
             
             链接
           </a>
@@ -254,7 +247,7 @@
         <li class="menu-item menu-item-schedule">
           <a href="/schedule/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
             
             日程表
           </a>
@@ -264,7 +257,7 @@
         <li class="menu-item menu-item-guestbook">
           <a href="/guestbook" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br>
             
             留言
           </a>
@@ -277,7 +270,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -298,9 +291,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -337,11 +328,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/2017/04/06/public_flask/">
+    <link itemprop="mainEntityOfPage" href="http://luciferarmy.github.io/archives/d1cd7329.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lucifer">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/Lucifer.jpg">
     </span>
 
@@ -354,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何将flask项目部署到阿里云服务器</h1>
+          <h1 class="post-title" itemprop="name headline">WSGI,web服务器,web框架之间的关系</h1>
         
 
         <div class="post-meta">
@@ -366,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T22:10:00+08:00">
-                2017-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T22:24:00+08:00">
+                2017-09-16
               </time>
             
 
@@ -377,7 +368,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -410,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -425,7 +416,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  766
+                  877
                 </span>
               
 
@@ -462,79 +453,40 @@
       
 
       
-        <p>本文介绍如何在阿里云部署和发布项目</p>
-<p>&#160; &#160; &#160; &#160;基于ubuntu 16.04系统，使用 Gunicorn + Nginx 进行布署，云服务器为阿里云</p>
+        <p>&#160; &#160; &#160; &#160;之前在学习flask框架时对于http请求在flask框架与wsgi以及web服务器之间传递和处理的流程,以及他们之间的关系一直很困惑,最近查阅了一些资料,整理出了web服务器，web框架与WSGI这三者之间的关系.</p>
+<p>&#160; &#160; &#160; &#160;简答的说:<br>客户端从发送一个 HTTP 请求到 Flask 处理请求，分别经过了 web服务器层，WSGI层，web框架层，这三个层次。不同的层次其作用也不同，下面简要介绍各层的作用。</p>
 <a id="more"></a>
-<h2 id="1-购买阿里云服务器"><a href="#1-购买阿里云服务器" class="headerlink" title="1.购买阿里云服务器"></a>1.购买阿里云服务器</h2><ul>
-<li>选择云服务器:阿里云服务器 <a href="https://www.aliyun.com" target="_blank" rel="noopener">https://www.aliyun.com</a></li>
-<li>个人免费获取 <a href="https://free.aliyun.com/" target="_blank" rel="noopener">https://free.aliyun.com/</a><br><img src="/assets/blogImg/flask_public_img/aliyun_server.png" alt=""></li>
-<li>创建服务器选择ubuntu16.04 64位的操作系统<br><img src="/assets/blogImg/flask_public_img/aliyun_server_ubuntu.png" alt=""></li>
-</ul>
-<h2 id="2-配置实例"><a href="#2-配置实例" class="headerlink" title="2.配置实例"></a>2.配置实例</h2><ol>
-<li>进入控制台,查看实例创建情况<br><img src="/assets/blogImg/flask_public_img/instance.png" alt=""></li>
-<li>重置root密码<br><img src="/assets/blogImg/flask_public_img/root.png" alt=""></li>
-<li>为实例添加安全组,给安全组配置规则<br>   开放80和5000端口<br><img src="/assets/blogImg/flask_public_img/security_group.png" alt=""><br><img src="/assets/blogImg/flask_public_img/security_group2.png" alt=""></li>
-</ol>
-<h2 id="3-登录Linux服务器安装项目运行环境"><a href="#3-登录Linux服务器安装项目运行环境" class="headerlink" title="3.登录Linux服务器安装项目运行环境"></a>3.登录Linux服务器安装项目运行环境</h2><p>   <img src="/assets/blogImg/flask_public_img/shell.png" alt=""></p>
+<p>如图:<br><img src="/assets/blogImg/wsgi1.png" alt></p>
+<p><strong>Web服务器层</strong><br>Web服务器是一类特殊的服务器，其作用是主要是接收 HTTP 请求并返回响应.</p>
 <ol>
-<li>先更新 apt 相关源</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>mysql安装</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mysql-server</span><br><span class="line">apt-get install libmysqlclient-dev</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>redis安装</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install redis-server</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>安装虚拟环境</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip install virtualenvwrapper</span><br></pre></td></tr></table></figure>
-<p>使得安装的virtualenvwrapper生效，编辑~/.bashrc文件，内容如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export WORKON_HOME=$HOME/.virtualenvs</span><br><span class="line">export PROJECT_HOME=$HOME/workspace</span><br><span class="line">source /usr/local/bin/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line"># 使编辑后的文件生效</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>安装flask项目依赖包</li>
-</ol>
-<ul>
-<li>requirements文件</li>
-</ul>
-<p>&#160; &#160; &#160; &#160;flask项目中可以包含一个 requirements.txt 文件，用于记录所有依赖包及其精确的版本号，以便在新环境中进行部署操作。</p>
-<ul>
-<li>在虚拟环境使用以下命令将当前虚拟环境中的依赖包以版本号生成至文件中：</li>
-</ul>
-<pre><code>pip freeze &gt; requirements.txt
-</code></pre><p>&#160; &#160; &#160; &#160;当需要创建这个虚拟环境的完全副本，可以创建一个新的虚拟环境，并在其上运行以下命令：</p>
-<pre><code>pip install -r requirements.txt
-</code></pre><p>&#160; &#160; &#160; &#160;在安装 Flask-MySQLdb 的时候可能会报错，可能是依赖包没有安装，执行以下命令安装依赖包：</p>
-<pre><code>sudo apt-get build-dep python-mysqldb
-</code></pre><h2 id="4-Nginx安装和配置"><a href="#4-Nginx安装和配置" class="headerlink" title="4.Nginx安装和配置"></a>4.Nginx安装和配置</h2><p>作用:实现分流、转发、负载均衡<br>   <img src="/assets/blogImg/flask_public_img/setup1.png" alt=""></p>
-<ol>
-<li><p>安装</p>
-<pre><code>sudo apt-get install nginx
-</code></pre><p>运行及停止</p>
-<pre><code>/etc/init.d/nginx start #启动
-
-/etc/init.d/nginx stop  #停止
-</code></pre></li>
-<li><p>配置</p>
-<p>编辑文件:</p>
-<pre><code>/etc/nginx/sites-available/default
-</code></pre><p>配置并修改 location 节点下面的 proxy_pass</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#多机部署需要添加下面内容</span><br><span class="line">#upstream flask &#123;</span><br><span class="line">#        server 127.0.0.1:5000;</span><br><span class="line">#        server 127.0.0.1:5001;</span><br><span class="line">#&#125;</span><br><span class="line">server &#123;</span><br><span class="line">        # 监听80端口</span><br><span class="line">        listen 80 default_server;</span><br><span class="line">        listen [::]:80 default_server;</span><br><span class="line"></span><br><span class="line">        root /var/www/html;</span><br><span class="line"></span><br><span class="line">        index index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">        server_name _;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                # 请求转发到gunicorn服务器</span><br><span class="line">                proxy_pass http://127.0.0.1:5000;</span><br><span class="line">                # 请求转发到多个gunicorn服务器(多机部署添加)</span><br><span class="line">                # proxy_pass http://flask;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>要运行web应用，必须有 web server;比如我们熟悉的apache、nginx，或者python中的gunicorn;</p>
+</li>
+<li><p>在flask框架中,werkzeug模块提供了web server,即是WSGIServer，下图的黄色Server部分;</p>
 </li>
 </ol>
-<h2 id="5-Gunicorn安装"><a href="#5-Gunicorn安装" class="headerlink" title="5.Gunicorn安装"></a>5.Gunicorn安装</h2><p>   <img src="/assets/blogImg/flask_public_img/setup2.png" alt=""><br>&#160; &#160; &#160; &#160;Gunicorn（绿色独角兽）是一个Python WSGI的HTTP服务器,从Ruby的独角兽（Unicorn ）项目移植,该Gunicorn服务器与各种Web框架兼容，实现非常简单，轻量级的资源消耗</p>
-<p>Gunicorn直接用命令启动，不需要编写配置文件</p>
-<p>安装</p>
-<pre><code>pip install gunicorn
-</code></pre><p>查看选项</p>
-<pre><code>gunicorn -h
-</code></pre><h2 id="6-运行项目"><a href="#6-运行项目" class="headerlink" title="6.运行项目"></a>6.运行项目</h2><pre><code>gunicorn -w 2 -b 127.0.0.1:5000 运行文件名称:Flask程序实例名
-
--w: 表示进程（worker） -b：表示绑定ip地址和端口号（bind）
-</code></pre><p>OK,部署成功,快让其他人去访问一下你的网站吧~~</p>
+<p><strong>Web框架层</strong><br>&#160; &#160; &#160; &#160;Web框架的作用主要是方便我们开发 web应用程序，HTTP请求的动态数据就是由 web框架层来提供的。<br>&#160; &#160; &#160; &#160;常见的 web框架有Flask，Django等，我们以 Flask 框架为例子，展示 web框架的作用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/hello&apos;)</span><br><span class="line">def hello_world():</span><br><span class="line">    return &apos;Hello World!&apos;</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    app.run(host=&apos;0.0.0.0&apos;, port=8080)</span><br></pre></td></tr></table></figure>
+<p>&#160; &#160; &#160; &#160;以上代码就创建了一个web应用程序对象 app。使用Web框架,并不需要关心如何接收 HTTP 请求和如何将响应结果返回给用户,只需要关心如何实现业务的逻辑即可。<br>每个Python Web应用都是一个可调用（callable）的对象。在 flask中，这个对象就是 app = Flask(name) 创建出来的 app，就是上图中的绿色Application部分;</p>
+<p><strong>WSGI层</strong><br>&#160; &#160; &#160; &#160;<strong>WSGI</strong> 全称为 Web Server Gateway Interface,它不是服务器，只是一种<strong>接口</strong>,只适用于 Python 语言，其定义了web服务器和 web应用之间的接口规范。只要 web服务器和 web应用都遵守WSGI协议，那么 web服务器和 web应用就可以进行交互.</p>
+<p>WSGI接口编写示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def application(env, start_response):</span><br><span class="line">    start_response(&apos;200 OK&apos;, [(&apos;Content-Type&apos;, &apos;text/html&apos;)])</span><br><span class="line">    return [b&quot;Hello World&quot;]</span><br></pre></td></tr></table></figure>
+<p>上述代码就是一个完整的 WSGI接口，application()函数就是符合WSGI标准的一个HTTP处理函数</p>
+<p>参数说明：</p>
+<ol>
+<li>env是一个字典，包含了类似 HTTP_HOST，HOST_USER_AGENT，SERVER_PROTOCO 等环境变量。</li>
+<li>start_response则是一个方法，该方法接受两个参数，分别是status，response_headers。</li>
+</ol>
+<p>&#160; &#160; &#160; &#160;application方法的主要作用是设置 http 响应的状态码和 Content-Type 等头部信息，并返回响应的具体结果。<br>&#160; &#160; &#160; &#160;当一个支持 WSGI的 web服务器接收到客户端的请求后，便会调用这个 application 方法，并传给它两个参数，start_response 和 application息。</p>
+<p><strong>总结:</strong></p>
+<p><img src="/assets/blogImg/wsgi2.png" alt></p>
+<ol>
+<li><p>WSGI将Web服务分成两个部分:服务器和应用程序。</p>
+</li>
+<li><p>WGSI服务器只负责与网络相关的两件事：<br>  接收浏览器的HTTP请求、向浏览器发送HTTP应答；而对HTTP请求的具体处理逻辑，则通过调用WSGI应用程序进行。</p>
+</li>
+</ol>
+<p>值得指出的是，WSGI 是一种协议，需要区分几个相近的名词：<br><strong>uwsgi</strong><br>一种通讯协议，uWSGI服务器正是使用了uwsgi协议实现网络通讯</p>
+<p><strong>uWSGI</strong><br>实现了 uwsgi 和 WSGI 两种协议的web服务器。注意 uWSGI 本质上也是一种 web服务器，处于上面描述的三层结构中的 web服务器层。</p>
 
       
     </div>
@@ -550,6 +502,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lucifer 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Lucifer 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -557,14 +538,29 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Lunix/" rel="tag"><i class="fa fa-tag"></i> Lunix</a>
+            <a href="/tags/wsgi/" rel="tag"><i class="fa fa-tag"></i> wsgi</a>
           
-            <a href="/tags/flask/" rel="tag"><i class="fa fa-tag"></i> flask</a>
+            <a href="/tags/Web服务/" rel="tag"><i class="fa fa-tag"></i> Web服务</a>
           
         </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
       
       
 
@@ -572,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/01/Centos7 安装mysql异常/" rel="next" title="Centos7 安装mysql后登录提示：Access denied for user 'root'@'localhost'">
-                <i class="fa fa-chevron-left"></i> Centos7 安装mysql后登录提示：Access denied for user 'root'@'localhost'
+              <a href="/archives/30ca2d8b.html" rel="next" title="Nginx静态资源和动态资源的分离">
+                <i class="fa fa-chevron-left"></i> Nginx静态资源和动态资源的分离
               </a>
             
           </div>
@@ -582,8 +578,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/24/weber/" rel="prev" title="“钢铁牢笼”－《新教伦理与资本主义精神》有感">
-                “钢铁牢笼”－《新教伦理与资本主义精神》有感 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/32b7c9fa.html" rel="prev" title="Django时间数据与保存到MySQL的时间相差8小时问题">
+                Django时间数据与保存到MySQL的时间相差8小时问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -614,6 +610,11 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NjUwNS8yMzAxNQ=="></div>
+    </div>
+
+  
 
 
 
@@ -636,23 +637,12 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/Lucifer.jpg"
-                alt="Lucifer" />
+              <img class="site-author-image" itemprop="image" src="/images/Lucifer.jpg" alt="Lucifer">
             
               <p class="site-author-name" itemprop="name">Lucifer</p>
               <p class="site-description motion-element" itemprop="description">Python  爬虫  数据分析</p>
@@ -754,22 +744,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-购买阿里云服务器"><span class="nav-number">1.</span> <span class="nav-text">1.购买阿里云服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置实例"><span class="nav-number">2.</span> <span class="nav-text">2.配置实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-登录Linux服务器安装项目运行环境"><span class="nav-number">3.</span> <span class="nav-text">3.登录Linux服务器安装项目运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Nginx安装和配置"><span class="nav-number">4.</span> <span class="nav-text">4.Nginx安装和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Gunicorn安装"><span class="nav-number">5.</span> <span class="nav-text">5.Gunicorn安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-运行项目"><span class="nav-number">6.</span> <span class="nav-text">6.运行项目</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -989,6 +963,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1332,6 +1317,31 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
   
 
   
