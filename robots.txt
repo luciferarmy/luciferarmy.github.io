@@ -12,5 +12,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 
-Sitemap: http://luciferarmy.cn/sitemap.xml
-Sitemap: http://luciferarmy.cn/baidusitemap.xml
+Sitemap: https://luciferarmy.cn/sitemap.xml
+Sitemap: https://luciferarmy.cn/baidusitemap.xml
